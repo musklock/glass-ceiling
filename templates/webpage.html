@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>User Profile </title>
+  	<link rel="stylesheet" href = "/static/styles.css"/>
+
+  </head>
+  <body>
+
+    <h1> {{fname}} {{ lname }} </h1>
+    <text> <b>Date of birth:</b> {{ dob }} </text>
+    <text> <b> Contact:</b> {{ email }} </text>
+    <br> <br>
+    <text> <b> Friends: </b></text>
+    <ul>
+    {% for friend in friends %}
+    <li><a href="http://localhost:5000/users/{{ friend }}"> http://localhost:5000/users/{{ friend }}</a></li>
+    {% endfor %}
+    </ul>
+
+    
+
+  </body>
+</html>

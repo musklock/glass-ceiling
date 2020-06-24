@@ -1,0 +1,17 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} </title>
+      {% else %}
+      <title>Glass Ceiling</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Glass Ceiling 
+          <a href="/index">Home</a>
+          <a href="/login">Login</a>
+        </div>
+
+        {% block content %}{% endblock %}
+    </body>
+</html>
