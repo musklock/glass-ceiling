@@ -6,6 +6,8 @@ Open your terminal on your PC and enter the following commands.
 
 
 ` source gc-venv/bin/activate `
+
+
 ` flask run `
 
 Then type http://localhost:5000/ in your browser.
