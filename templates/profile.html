@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Make Your Profile</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.company.label }}<br>
+            {{ form.company }}
+        </p>
+        <p>
+            {{ form.job_title.label }}<br>
+            {{ form.job_title }}
+        </p>
+        <p>
+            {{ form.profession.label }}<br>
+            {{ form.profession }}
+        </p>
+        <p>
+            {{ form.salary.label }}<br>
+            {{ form.salary }}
+        </p>     
+
+        <p>
+            {{ form.education.label }}<br>
+            {{ form.experience }}
+        </p>
+        <p>
+            {{ form.gender.label }}<br>
+            {{ form.sex }}
+        </p>
+        <p>
+            {{ form.sex.label }}<br>
+            {{ form.sex }}
+        </p>
+        <p>
+            {{ form.skin_color.label }}<br>
+            {{ form.skin_color }}
+        </p>
+        <p>
+            {{ form.ethnicity.label }}<br>
+            {{ form.ethnicity }}
+        </p>
+        <p>
+            {{ form.race.label }}<br>
+            {{ form.race }}
+        </p>
+        <p>
+            {{ form.orientation.label }}<br>
+            {{ form.orientation }}
+        </p>
+        <p>
+            {{ form.age.label }}<br>
+            {{ form.age }}
+        </p>
+        <p>
+            {{ form.orientation.label }}<br>
+            {{ form.orientation }}
+        </p>
+        <p>
+            {{ form.disability.label }}<br>
+            {{ form.disability }}
+        </p>
+        <p>
+            {{ form.exconvict.label }}<br>
+            {{ form.exconvict }}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

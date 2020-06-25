@@ -19,3 +19,4 @@ Then type http://localhost:5000/ in your browser.
 4. Flask-Migrate
 5. Flask-Login
 6. email_validator
+7. Flask-Mail

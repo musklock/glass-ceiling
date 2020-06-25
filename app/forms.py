@@ -15,18 +15,7 @@ class SignupForm(FlaskForm):
     full_name = StringField("Full Name", validators=[InputRequired(), Length(min=5, max=35)])
     password = PasswordField("Password", validators=[InputRequired(), Length(min=8, max=128)])
     password_again = PasswordField("Confirm Password", validators=[InputRequired(), EqualTo('password')])
-    picture = FileField('Picture', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField("SignUp")
-
-class UpdateAccountForm(FlaskForm):
-    username = StringField('Username', validators=[InputRequired(), Length(min=2, max=20)])
-    full_name = StringField("Full Name", validators=[InputRequired(), Length(min=5, max=35)])
-    bio = TextAreaField("Bio", validators=[Length(max=1024)])
-    class_year = StringField("Class Year", validators=[Length(max=10)])
-    email = StringField('Email', validators=[InputRequired(), Email()])
-    picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
-    submit = SubmitField('Update')
-
     def validate_username(self, username):
         if username.data != current_user.username:
             user = User.query.filter_by(username=username.data).first()
@@ -38,6 +27,29 @@ class UpdateAccountForm(FlaskForm):
             user = User.query.filter_by(email=email.data).first()
             if user:
                 raise ValidationError('That email is taken. Please choose a different one.')
+
+class ProfileForm(FlaskForm):
+    company = StringField('Company', validators=[InputRequired()])
+    job_title = StringField("Job Title", validators=[InputRequired()])
+    profession = TextAreaField("Profession", validators=[Length(max=1024)])
+    salary = StringField('Email', validators=[InputRequired(), Email()])
+    bonuses = StringField('Bonuses', validators=[InputRequired()])
+    education = StringField('Education', validators=[InputRequired()])
+    experience = TextAreaField('Experience', validators=[InputRequired()])
+    gender = StringField('Gender', validators=[InputRequired()])
+    sex = StringField('Sex', validators=[InputRequired()])
+    skin_color = StringField('Skin Color', validators=[InputRequired()])
+    ethnicity = StringField('Ethnicity', validators=[InputRequired()])
+    race = StringField('Race', validators=[InputRequired()])
+    orientation = StringField('Orientation', validators=[InputRequired()])
+    age = StringField('Age', validators=[InputRequired()])
+    disability = StringField('Disability', validators=[InputRequired()])
+    veteran = StringField('Veteran', validators=[InputRequired()])
+    exconvict = StringField('Ex-convict', validators=[InputRequired()])
+    submit = SubmitField('Submit')
+
+
+    
 class RequestResetForm(FlaskForm):
     email = StringField('Please Enter your Email', validators=[InputRequired(), Email()])
     submit = SubmitField('Request')
